@@ -701,7 +701,7 @@ async def update_game_board(message: types.Message, game: dict, game_id: str):
         f"🎮 <b>Крестики-нолики</b>\n\n"
         f"❌ {game['player_x_name']} (@{game['player_x_username']})\n"
         f"⭕ {game['player_o_name']} (@{game['player_o_username']})\n"
-        f"{f'💰 Ставка: {game['bet']} msg' if game['bet'] > 0 else '🎮 Игра без ставки'}\n\n"
+        f"💰 Ставка: {game['bet']} msg" if game['bet'] > 0 else '🎮 Игра без ставки'
         f"⚡ Ходит: {current_turn_name} {current_turn_symbol}"
     )
     
