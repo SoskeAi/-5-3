@@ -17,7 +17,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 import aiofiles
 OWNER_ID = 7564741700
 # Конфигурация
-BOT_TOKEN = "8162631163:AAHTuahvD5uKnlNQBlpVS0PJjIem9Qsl7Hk"
+BOT_TOKEN = "8162631163:AAFRs_BObrlgk2E-ygd4eYYBsXBHKL4NdCs"
 DATA_FILE = "botUsersAi.json"
 KRASNOYARSK_TZ = timezone('Asia/Krasnoyarsk')  # UTC+7
 
