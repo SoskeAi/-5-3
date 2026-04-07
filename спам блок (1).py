@@ -2613,10 +2613,10 @@ async def cmd_set_balance(message: Message):
     try:
         await bot.send_message(
             int(target_id),
-            f"⚙️ <b>Изменение баланса</b>\n"
-            f"└─ Администратор изменил твой баланс\n"
-            f"└─ Старый баланс: {old_balance} msg\n"
-            f"└─ Новый баланс: {amount} msg\n"
+            f"⚙️ <b>Изменение баланса</b>\n",
+            f"└─ Администратор изменил твой баланс\n",
+            f"└─ Старый баланс: {old_balance} msg\n",
+            f"└─ Новый баланс: {amount} msg\n",
             parse_mode="HTML"
         )
     except Exception as e:
@@ -2715,9 +2715,9 @@ async def cmd_give_vip(message: Message):
     target_name = target_data.get('registered_name', f"@{target_username}")
     
     await message.answer(
-        f"✅ <b>VIP статус выдан!</b>\n\n"
-        f"👤 Пользователь: {target_name}\n"
-        f"📅 Выдано: {weeks} недель(и)\n"
+        f"✅ <b>VIP статус выдан!</b>\n\n",
+        f"👤 Пользователь: {target_name}\n",
+        f"📅 Выдано: {weeks} недель(и)\n",
         f"⏰ Действует до: {expiry_date}",
         parse_mode="HTML"
     )
@@ -2726,9 +2726,9 @@ async def cmd_give_vip(message: Message):
     try:
         await bot.send_message(
             int(target_id),
-            f"👑 <b>Тебе выдан VIP статус!</b>\n\n"
-            f"📅 Выдано: {weeks} недель(и)\n"
-            f"⏰ Действует до: {expiry_date}\n\n"
+            f"👑 <b>Тебе выдан VIP статус!</b>\n\n",
+            f"📅 Выдано: {weeks} недель(и)\n",
+            f"⏰ Действует до: {expiry_date}\n\n",
             f"✨ Используй <code>.вип</code> для проверки статуса",
             parse_mode="HTML"
         )
@@ -2801,8 +2801,8 @@ async def cmd_remove_vip(message: Message):
     target_name = target_data.get('registered_name', f"@{target_username}")
     
     await message.answer(
-        f"✅ <b>VIP статус забран!</b>\n\n"
-        f"👤 Пользователь: {target_name}\n"
+        f"✅ <b>VIP статус забран!</b>\n\n",
+        f"👤 Пользователь: {target_name}\n",
         f"❌ VIP статус деактивирован",
         parse_mode="HTML"
     )
@@ -2811,7 +2811,7 @@ async def cmd_remove_vip(message: Message):
     try:
         await bot.send_message(
             int(target_id),
-            f"❌ <b>У тебя забрали VIP статус!</b>\n\n"
+            f"❌ <b>У тебя забрали VIP статус!</b>\n\n",
             f"К сожалению, администратор отключил твой VIP статус.",
             parse_mode="HTML"
         )
@@ -3037,16 +3037,16 @@ async def send_mines_board(message: Message, game: MinesGame):
         progress_text = f"📊 Ходов: {game.step}/4 | Множитель: x{current_multiplier}"
     
     board_text = (
-        f"💣 <b>МИНЫ</b> 💣\n\n"
-        f"💰 Ставка: {game.bet} msg\n"
-        f"{progress_text}\n\n"
-        f"⚡ <b>Множители:</b>\n"
-        f"1 ход — x1.2\n"
-        f"2 хода — x1.5\n"
-        f"3 хода — x2.0\n"
-        f"4 хода — x3.0 💎\n\n"
-        f"💥 Попал на мину — возврат 50%\n"
-        f"⬜ Клетки с номерами — можно открыть"
+        f"💣 <b>МИНЫ</b> 💣\n\n",
+        f"💰 Ставка: {game.bet} msg\n",
+        f"{progress_text}\n\n",
+        f"⚡ <b>Множители:</b>\n",
+        f"1 ход — x1.2\n",
+        f"2 хода — x1.5\n",
+        f"3 хода — x2.0\n",
+        f"4 хода — x3.0 💎\n\n",
+        f"💥 Попал на мину — возврат 50%\n",
+        f"⬜ Клетки с номерами — можно открыть",
     )
     
     # Отправляем или редактируем сообщение
@@ -3124,17 +3124,17 @@ async def show_final_board(message: Message, game: MinesGame, win_amount: int, w
     # Определяем результат
     if win:
         result_text = (
-            f"🎉 <b>ТЫ ВЫИГРАЛ!</b> 🎉\n\n"
-            f"💰 Ставка: {game.bet} msg\n"
-            f"💎 Выигрыш: +{win_amount} msg\n"
-            f"💣 Мин на поле: {len(game.mines)}"
+            f"🎉 <b>ТЫ ВЫИГРАЛ!</b> 🎉\n\n",
+            f"💰 Ставка: {game.bet} msg\n",
+            f"💎 Выигрыш: +{win_amount} msg\n",
+            f"💣 Мин на поле: {len(game.mines)}",
         )
     else:
         result_text = (
-            f"💥 <b>ТЫ ПОДОРВАЛСЯ!</b> 💥\n\n"
-            f"💰 Ставка: {game.bet} msg\n"
-            f"💔 Возврат: {win_amount} msg (50%)\n"
-            f"💣 Мин на поле: {len(game.mines)}"
+            f"💥 <b>ТЫ ПОДОРВАЛСЯ!</b> 💥\n\n",
+            f"💰 Ставка: {game.bet} msg\n",
+            f"💔 Возврат: {win_amount} msg (50%)\n",
+            f"💣 Мин на поле: {len(game.mines)}",
         )
     
     # Создаем клавиатуру только с одной кнопкой
@@ -3144,8 +3144,8 @@ async def show_final_board(message: Message, game: MinesGame, win_amount: int, w
     markup = builder.as_markup()
     
     final_text = (
-        f"💣 <b>ИГРА ОКОНЧЕНА</b> 💣\n\n"
-        f"{result_text}\n"
+        f"💣 <b>ИГРА ОКОНЧЕНА</b> 💣\n\n",
+        f"{result_text}\n",
     )
     
     # Редактируем существующее сообщение
@@ -3345,9 +3345,9 @@ async def animate_ship_metro(message: Message, user1_data: dict, user2_data: dic
     # Этап 2: Проверяю поведение (0.4 сек)
     await asyncio.sleep(0.4)
     await anim_message.edit_text(
-        f"🚇 <b>ЛИНИЯ ЛЮБВИ</b> 🚇\n"
-        f"{display_name1}\n"
-        f"{display_name2}\n\n"
+        f"🚇 <b>ЛИНИЯ ЛЮБВИ</b> 🚇\n",
+        f"{display_name1}\n",
+        f"{display_name2}\n\n",
         f"<i>Проверяю твою аву и его...</i>",
         parse_mode="HTML"
     )
@@ -3554,14 +3554,14 @@ async def cmd_dot_bank(message: Message):
     fill_bar = "▰" * fill_percent + "▱" * (10 - fill_percent)
     
     bank_text = (
-        f"🏦 <b>Банк {user_data.get('registered_name')}</b>\n"
-        f"├─ Хранится: {bank_amount} msg\n"
-        f"├─ Лимит: {bank_limit} msg\n"
-        f"├─ Заполнено: [{fill_bar}]\n\n"
-        f"💹 <b>Проценты:</b>\n"
-        f"├─ Ставка: 1%/час\n"
-        f"├─ Сообщений за час: {hourly_msgs}/10\n"
-        f"├─ До начисления: {minutes_to_next} мин\n\n"
+        f"🏦 <b>Банк {user_data.get('registered_name')}</b>\n",
+        f"├─ Хранится: {bank_amount} msg\n",
+        f"├─ Лимит: {bank_limit} msg\n",
+        f"├─ Заполнено: [{fill_bar}]\n\n",
+        f"💹 <b>Проценты:</b>\n",
+        f"├─ Ставка: 1%/час\n",
+        f"├─ Сообщений за час: {hourly_msgs}/10\n",
+        f"├─ До начисления: {minutes_to_next} мин\n\n",
     )
     
     await message.answer(bank_text, parse_mode="HTML")
@@ -3611,8 +3611,8 @@ async def cmd_dot_bank_deposit(message: Message):
     # Проверка: хватает ли денег на балансе
     if user_data["msg_count"] < amount:
         await message.answer(
-            f"❌ Недостаточно msg на балансе!\n"
-            f"└─ Твой баланс: {user_data['msg_count']} msg\n"
+            f"❌ Недостаточно msg на балансе!\n",
+            f"└─ Твой баланс: {user_data['msg_count']} msg\n",
             f"💡 Напиши больше сообщений, чтобы накопить нужную сумму!",
             parse_mode="HTML"
         )
@@ -3626,9 +3626,9 @@ async def cmd_dot_bank_deposit(message: Message):
     if bank_amount + amount > bank_limit:
         free_space = bank_limit - bank_amount
         await message.answer(
-            f"❌ Недостаточно места в банке!\n"
-            f"└─ Свободно места: {free_space} msg\n"
-            f"└─ Лимит банка: {bank_limit} msg\n\n"
+            f"❌ Недостаточно места в банке!\n",
+            f"└─ Свободно места: {free_space} msg\n",
+            f"└─ Лимит банка: {bank_limit} msg\n\n",
             f"💡 Купи новую ячейку: <code>.банк купить ячейку</code>",
             parse_mode="HTML"
         )
@@ -3643,9 +3643,9 @@ async def cmd_dot_bank_deposit(message: Message):
     
     print(f"  └─ ✅ +{amount} msg в банк")
     await message.answer(
-        f"✅ <b>Успешно положено!</b>\n"
-        f"└─ Сумма: {amount} msg\n"
-        f"└─ Новый баланс: {users[user_id_str]['msg_count']} msg\n"
+        f"✅ <b>Успешно положено!</b>\n",
+        f"└─ Сумма: {amount} msg\n",
+        f"└─ Новый баланс: {users[user_id_str]['msg_count']} msg\n",
         f"└─ В банке: {users[user_id_str]['bank_amount']}/{bank_limit} msg",
         parse_mode="HTML"
     )
@@ -3714,9 +3714,9 @@ async def cmd_dot_bank_withdraw(message: Message):
     
     print(f"  └─ ✅ -{amount} msg из банка")
     await message.answer(
-        f"✅ <b>Успешно снято!</b>\n"
-        f"└─ Сумма: {amount} msg\n"
-        f"└─ Новый баланс: {users[user_id_str]['msg_count']} msg\n"
+        f"✅ <b>Успешно снято!</b>\n",
+        f"└─ Сумма: {amount} msg\n",
+        f"└─ Новый баланс: {users[user_id_str]['msg_count']} msg\n",
         f"└─ В банке: {users[user_id_str]['bank_amount']}/{bank_limit} msg",
         parse_mode="HTML"
     )
@@ -3746,9 +3746,9 @@ async def cmd_dot_bank_buy_cell(message: Message):
     # Проверяем, хватает ли денег
     if user_data["msg_count"] < cell_cost:
         await message.answer(
-            f"❌ Недостаточно msg для покупки ячейки!\n"
-            f"└─ Стоимость ячейки {next_cell_number}: {cell_cost} msg\n"
-            f"└─ Твой баланс: {user_data['msg_count']} msg\n\n"
+            f"❌ Недостаточно msg для покупки ячейки!\n",
+            f"└─ Стоимость ячейки {next_cell_number}: {cell_cost} msg\n",
+            f"└─ Твой баланс: {user_data['msg_count']} msg\n\n",
             f"💡 Не хватает: {cell_cost - user_data['msg_count']} msg",
             parse_mode="HTML"
         )
@@ -3763,11 +3763,11 @@ async def cmd_dot_bank_buy_cell(message: Message):
     
     print(f"  └─ ✅ Куплена ячейка {next_cell_number} за {cell_cost} msg")
     await message.answer(
-        f"✅ <b>Ячейка куплена!</b>\n"
-        f"└─ Новая ячейка: {next_cell_number}\n"
-        f"└─ Стоимость: {cell_cost} msg\n"
-        f"└─ Новый лимит: {new_limit} msg\n\n"
-        f"💰 Баланс: {users[user_id_str]['msg_count']} msg\n"
+        f"✅ <b>Ячейка куплена!</b>\n",
+        f"└─ Новая ячейка: {next_cell_number}\n",
+        f"└─ Стоимость: {cell_cost} msg\n",
+        f"└─ Новый лимит: {new_limit} msg\n\n",
+        f"💰 Баланс: {users[user_id_str]['msg_count']} msg\n",
         f"🏦 В банке: {users[user_id_str]['bank_amount']}/{new_limit} msg",
         parse_mode="HTML"
     )
