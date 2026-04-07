@@ -2605,7 +2605,7 @@ async def cmd_set_balance(message: Message):
         f"✅ <b>Баланс изменён!</b>\n"
         f"└─ Пользователь: {target_name}\n"
         f"└─ Старый баланс: {old_balance} msg\n"
-        f"└─ Новый баланс: {amount} msg\n" msg",
+        f"└─ Новый баланс: {amount} msg\n",
         parse_mode="HTML"
     )
     
