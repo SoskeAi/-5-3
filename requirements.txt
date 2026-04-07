@@ -1,2 +1,3 @@
 pytz
 aiogram
+aiosqlite
