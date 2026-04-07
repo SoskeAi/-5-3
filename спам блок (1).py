@@ -801,9 +801,9 @@ async def cmd_dot_rank(message: Message):
     percent_display = int((progress / need_for_next) * 100) if need_for_next > 0 else 0
     
     # Получаем общее количество сообщений
-    total_messages = msg_count - 1000
+    total_messages = msg_count + 0
     if total_messages < 0:
-        total_messages = 0
+        total_messages = 1000
     
     # Получаем статистику игр
     games_stats = target_data.get('games_stats', {})
@@ -838,7 +838,7 @@ async def cmd_dot_rank(message: Message):
         f"{header}\n"
         f"{level_emoji} <b>Уровень: {level}</b>\n"
         f"👤 <b>Имя:</b> {target_data.get('registered_name', 'Не указано')}\n"
-        f"📝 <b>Msg:</b> {total_messages}\n"
+        f"📝 <b>Msg:</b> {msg_count}\n"
         f"{vip_text}\n\n"
         f"📈 <b>До {level + 1} уровня:</b>\n"
         f"└─ {progress_bar} {percent_display}%\n"
