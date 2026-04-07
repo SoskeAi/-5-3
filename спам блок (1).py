@@ -1868,7 +1868,7 @@ async def update_game_board(message: types.Message, game: dict, game_id: str):
         f"🎮 <b>Крестики-нолики</b>\n\n"
         f"❌ {game['player_x_name']} (@{game['player_x_username']}) | 🏆 {x_stats.get('ttt_wins', 0)} побед\n"
         f"⭕ {game['player_o_name']} (@{game['player_o_username']}) | 🏆 {o_stats.get('ttt_wins', 0)} побед\n"
-        f"{f'💰 Ставка: {game['bet']} msg' if game['bet'] > 0 else '🎮 Игра без ставки'}\n\n"
+        f"{'💰 Ставка: ' + str(game['bet']) + ' msg' if game['bet'] > 0 else '🎮 Игра без ставки'}\n\n"
         f"⚡ Сейчас ходит: {current_turn_name} {current_turn_symbol}\n"
         f"⏰ Время на ход: 30 секунд"
     )
