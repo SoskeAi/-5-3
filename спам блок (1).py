@@ -3125,14 +3125,14 @@ async def show_final_board(message: Message, game: MinesGame, win_amount: int, w
     if win:
         result_text = (
             f"🎉 <b>ТЫ ВЫИГРАЛ!</b> 🎉\n\n",
-            f"💰 Ставка: {game.bet} msg\n",
+            f"💰 Ставка: {game['bet']} msg\n", 
             f"💎 Выигрыш: +{win_amount} msg\n",
             f"💣 Мин на поле: {len(game.mines)}",
         )
     else:
         result_text = (
             f"💥 <b>ТЫ ПОДОРВАЛСЯ!</b> 💥\n\n",
-            f"💰 Ставка: {game.bet} msg\n",
+            f"💰 Ставка: {game['bet']} msg\n",
             f"💔 Возврат: {win_amount} msg (50%)\n",
             f"💣 Мин на поле: {len(game.mines)}",
         )
