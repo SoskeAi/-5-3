@@ -1913,10 +1913,10 @@ async def show_final_board(message: types.Message, game: dict, result_text: str,
     
     game_text = (
         f"🎮 <b>Крестики-нолики</b>\n\n"
-        f"❌ {game['player_x_name']} (@{game['player_x_username']}) | 🏆 {x_stats.get('ttt_wins', 0)} побед\n"
-        f"⭕ {game['player_o_name']} (@{game['player_o_username']}) | 🏆 {o_stats.get('ttt_wins', 0)} побед\n"
-        f"💰 Ставка: {game['bet']} msg" if game['bet'] > 0 else '🎮 Игра без ставки\n\n'
-        f"📊 <b>{result_text}</b>"
+        f"❌ {game['player_x_name']} (@{game['player_x_username']}) | 🏆 {x_stats.get('ttt_wins', 0)} побед\n",
+        f"⭕ {game['player_o_name']} (@{game['player_o_username']}) | 🏆 {o_stats.get('ttt_wins', 0)} побед\n",
+        f"💰 Ставка: {game['bet']} msg" if game['bet'] > 0 else '🎮 Игра без ставки\n\n',
+        f"📊 <b>{result_text}</b>",
     )
     
     await message.edit_text(game_text, reply_markup=markup, parse_mode="HTML")
