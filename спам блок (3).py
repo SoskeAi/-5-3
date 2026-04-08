@@ -2918,7 +2918,8 @@ async def show_final_board(message: types.Message, game: dict, result_text: str,
         f"├─🆔 ID: <code>{game['player_x']}</code>\n"
         f"⭕ Игрок O: {player_o_link}\n"
         f"├─🆔 ID: <code>{game['player_o']}</code>\n"
-        f"{f'💰 Ставка: <b>{game['bet']}</b> msg' if game['bet'] > 0 else '🎮 Игра без ставки'}\n\n"
+        
+f"💰 Ставка: {game['bet']} msg\n\n" if game['bet'] > 0 else "🎮 Игра без ставки\n\n"
         f"📊 <b>{result_text}</b>"
     )
     
