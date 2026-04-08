@@ -2773,7 +2773,8 @@ async def timer_timeout(game_id: str, bot: Bot):
                 f"🎮 <b>Крестики-нолики</b>\n\n"
                 f"❌ {game['player_x_name']} (@{game['player_x_username']})\n"
                 f"⭕ {game['player_o_name']} (@{game['player_o_username']})\n"
-                f"{f'💰 Ставка: {game['bet']} msg' if game['bet'] > 0 else '🎮 Игра без ставки'}\n\n"
+                
+f"💰 Ставка: {game['bet']} msg\n\n" if game['bet'] > 0 else "🎮 Игра без ставки\n\n"
                 f"📊 <b>{result_text}</b>",
                 chat_id=game['chat_id'],
                 message_id=game['message_id'],
