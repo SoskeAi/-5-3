@@ -1,3 +1,13 @@
+asyncio
+Update
+InlineKeyboardButton
+InlineKeyboardMarkup
+Application
+CommandHandler
+MessageHandler
+filters
+ContextTypes
+CallbackQueryHandler
 pytz
 aiogram
 aiosqlite
